@@ -1,11 +1,30 @@
-
-import React from 'react'
-import Logo from './Logo'
+import React from "react";
+import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <div>
-      <Logo/>
+      <div>
+        <Logo />
+        <ul>
+          <li>
+            <Link to={"./loginpage"} className="loginbtn">
+              로그인
+            </Link>
+          </li>
+          <li>
+            <Link to={"./membership"} className="membership">
+              회원가입
+            </Link>
+          </li>
+          <li>
+            <Link to={"./mypage"} className="mypage">
+              마이페이지
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
-  )
+  );
 }
