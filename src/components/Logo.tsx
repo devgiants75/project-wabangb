@@ -1,5 +1,5 @@
 import React from 'react'
-import './reset.css'
+import './styles/reset.css'
 
 export default function Logo() {
   return (
