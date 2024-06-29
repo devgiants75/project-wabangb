@@ -1,11 +1,13 @@
 import React from "react";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
+import "./style/reset.css";
+import "./style/header.css";
 
 export default function Header() {
   return (
     <div>
-      <div>
+      <div className="bar-container">
         <Logo />
         <ul>
           <li>
