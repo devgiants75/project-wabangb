@@ -1,1 +1,1 @@
-export const tmp = '';
+export const tmp = 'sdad+\n+sadas';
