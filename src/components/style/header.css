@@ -1,0 +1,17 @@
+.bar-container {
+  border: 1px solid black;
+  width: 100%;
+  height: 300px;
+}
+
+.bar-container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.bar-container ul li {
+  border: 1px solid black;
+  padding-right: 10px;
+  
+}
