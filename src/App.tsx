@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import HomePage from "./views/HomePage";
 import { Route, Routes } from "react-router-dom";
@@ -24,13 +23,12 @@ export default function App() {
   return (
     <>
       <Routes>
-        <p>component 파일</p>
-        <Route path="/Footer" element={<Footer />} />
-        <Route path="/header" element={<Header />} />
         <Route path="/logo" element={<Logo />} />
         <Route path="/menubar" element={<MenuBar />} />
+        <Route path="/footer" element={<Footer />} />
+        <Route path="/header" element={<Header />} />
 
-        <p>views 파일</p>
+        
         <Route path="/cancellation" element={<Cancellation />} />
         <Route path="/hompage" element={<HomePage />} />
         <Route path="/lodgingdetails" element={<LodgingDetails />} />
