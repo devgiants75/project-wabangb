@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import HomePage from "./views/HomePage";
+import { Route, Routes } from "react-router-dom";
+import Cancellation from "./views/Cancellation";
+import LodgingDetails from "./views/LodgingDetails";
+import LodgingList from "./views/LodgingList";
+import LodgingLocation from "./views/LodgingLocation";
+import ReservationComplete from "./views/ReservationComplete";
+import ReservationList from "./views/ReservationList";
+import ReservationPage from "./views/ReservationPage";
+import ReviewEdit from "./views/ReviewEdit";
+import ReviewPage from "./views/ReviewPage";
+import SignIn from "./views/SignIn";
+import SignUp from "./views/SignUp";
+import UsageDetails from "./views/UsageDetails";
+import Footer from "./components/Footer";
+import MenuBar from "./components/MenuBar";
+import Logo from "./components/Logo";
+import Header from "./components/Header";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <p>component 파일</p>
+        <Route path="/Footer" element={<Footer />} />
+        <Route path="/header" element={<Header />} />
+        <Route path="/logo" element={<Logo />} />
+        <Route path="/menubar" element={<MenuBar />} />
+
+        <p>views 파일</p>
+        <Route path="/cancellation" element={<Cancellation />} />
+        <Route path="/hompage" element={<HomePage />} />
+        <Route path="/lodgingdetails" element={<LodgingDetails />} />
+        <Route path="/lodginglist" element={<LodgingList />} />
+        <Route path="/lodginglocation" element={<LodgingLocation />} />
+        <Route path="/reservationcomplete" element={<ReservationComplete />} />
+        <Route path="/reservationlist" element={<ReservationList />} />
+        <Route path="/reservationpage" element={<ReservationPage />} />
+        <Route path="/reviewedit" element={<ReviewEdit />} />
+        <Route path="/reviewpage" element={<ReviewPage />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/usagedetails" element={<UsageDetails />} />
+      </Routes>
+    </>
   );
 }
-
-export default App;
