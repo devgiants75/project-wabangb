@@ -18,10 +18,12 @@ import Footer from "./components/Footer";
 import MenuBar from "./components/MenuBar";
 import Logo from "./components/Logo";
 import Header from "./components/Header";
+import NavigationBar from "./components/NavigationBar";
 
 export default function App() {
   return (
     <>
+      <NavigationBar />
       <Routes>
         <Route path="/logo" element={<Logo />} />
         <Route path="/menubar" element={<MenuBar />} />
