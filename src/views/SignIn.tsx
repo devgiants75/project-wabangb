@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './styles/signIn.css';
+import '../styles/signIn.css';
 
 // 로그인에 필요한 객체들 타입 정의
 interface SignInProps {
@@ -18,11 +18,19 @@ export default function SignIn() {
     const {name, value} = e.target;
     setValues({...values, [name]: value});
   };
-
   
+  //* 에러 상태 관리
+  const [errors, setErrors] = useState<string | null>(null);
+
+  //* 유효성 검사 함수
+  const onSubmit = async (a: React.FormEvent<HTMLInputElement>) => {
+
+  };
+
 
   return (
     <div className='signin-box'>
+      <img src='images/wabangbSmall.png' alt="" />
       <input 
         type="text"
         placeholder='아이디' 
@@ -32,7 +40,7 @@ export default function SignIn() {
         type="text"
         placeholder='비밀번호' 
       />
-      <button>Sign in</button>
+      <button type='submit'>Sign in</button>
     </div>
   )
 }

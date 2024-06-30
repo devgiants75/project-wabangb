@@ -18,6 +18,10 @@
   border-radius: 7px;
 }
 
+.signin-box img {
+  margin-bottom: 25px;
+}
+
 .signin-box input,
 .signin-box button {
   padding: 15px;
