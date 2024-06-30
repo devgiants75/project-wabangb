@@ -8,11 +8,13 @@
 }
 
 .logo {
+  box-sizing: border-box;
   text-align: center;
   font-family: "LOTTERIACHAB";
   font-size: 80px;
   width: 100%;
-  height: 500px;
+  /* height: 150px; */
+  flex-grow: 1;
   margin: 0 auto;
   text-shadow: 6px 6px 2px #2fc0e6, 10px 10px 2px #2195b3, 15px 15px 2px #1989ca,
     20px 20px 5px #296685, 25px 25px 5px #e9ec1f;

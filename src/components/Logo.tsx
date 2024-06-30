@@ -1,4 +1,8 @@
 import React from "react";
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
 import "../styles/reset.css";
 import "../styles/Logo.css";
 

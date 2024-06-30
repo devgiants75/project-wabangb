@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import "../styles/header.css";
 import "../styles/reset.css";
 import Main_Search from "./MainSearch";
+<<<<<<< HEAD
+=======
+import ContrySelect from "./ContrySelect";
+import Footer from "./Footer";
+>>>>>>> develop
 
 export default function Header() {
   return (
@@ -30,7 +35,15 @@ export default function Header() {
           <Logo />
         </div>
       </div>
-      <Main_Search />
+      <div>
+        <Main_Search></Main_Search>
+      </div>
+      <div>
+        <ContrySelect></ContrySelect>
+      </div>
+      <div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }
