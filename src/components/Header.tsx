@@ -1,14 +1,19 @@
 import React from "react";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import "../styles/header.css";
 import "../styles/reset.css";
+=======
+import "..styles/header.css";
+import "..styles/reset.css";
+import Main_Search from "./MainSearch";
+>>>>>>> develop
 
 export default function Header() {
   return (
     <div>
       <div className="bar-container">
-        <Logo />
         <ul>
           <li>
             <Link to={"./loginpage"} className="loginbtn">
@@ -26,7 +31,11 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+        <div className="Logo-container">
+          <Logo />
+        </div>
       </div>
+      <Main_Search />
     </div>
   );
 }
