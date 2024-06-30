@@ -26,7 +26,7 @@ a img {
 }
 
 .container-imgs ul {
-  box-sizing: border-box;
+  box-sizing: gborder-box;
   display: flex;
   justify-content: center;
   align-items: center;
