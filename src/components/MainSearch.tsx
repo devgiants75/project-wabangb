@@ -1,4 +1,4 @@
-import "./Main_Search.css";
+import "..styles/Main_Search.css";
 
 function Main_Search() {
   return (
