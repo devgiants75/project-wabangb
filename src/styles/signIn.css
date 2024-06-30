@@ -6,7 +6,7 @@
   --padding: 60px;
 }
 
-.signin-box {
+.box {
   position: relative;
   margin: 150px auto;
   width: 400px;
@@ -18,24 +18,25 @@
   border-radius: 7px;
 }
 
-.signin-box img {
+.box img {
   margin-bottom: 25px;
 }
 
-.signin-box input,
-.signin-box button {
+.box input,
+.box button {
   padding: 15px;
   font-size: 1.2em;
   border: none;
 }
 
-.signin-box input {
+.box input {
   margin-bottom: 25px;
 }
 
-.signin-box button {
+.box button {
   background-color: #FFFDCB;
   color: #1989ca;
   border-radius: 4px;
   cursor: pointer;
+  width: 280px;
 }
