@@ -37,6 +37,7 @@ body {
 }
 
 .search-element {
+  position: absolute;
   box-sizing: border-box;
   width: 900px;
   height: 100px;
@@ -51,7 +52,7 @@ body {
 button {
   box-sizing: border-box;
   height: 50px;
-  width: 220px;
+  width: 200px;
   margin: 0px;
   margin-right: 15px;
   padding: 0px 20px;
@@ -62,12 +63,19 @@ button {
   outline: none;
 }
 
+.search-continer {
+  background-image: url(../assets/휴양지.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .search-area {
 }
 
 .search-button {
   height: 50px;
-  width: 180px;
+  width: 200px;
   cursor: pointer;
   font-size: 20px;
   font-weight: 700;
