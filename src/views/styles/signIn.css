@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --padding: 60px;
+}
+
+.signin-box {
+  position: relative;
+  margin: 150px auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding);
+  background-color: #A0DEFF;
+  border-radius: 7px;
+}
+
+.signin-box input,
+.signin-box button {
+  padding: 15px;
+  font-size: 1.2em;
+  border: none;
+}
+
+.signin-box input {
+  margin-bottom: 25px;
+}
+
+.signin-box button {
+  background-color: #FFFDCB;
+  color: #1989ca;
+  border-radius: 4px;
+  cursor: pointer;
+}
