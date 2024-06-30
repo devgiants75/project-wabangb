@@ -15,9 +15,11 @@ import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
 import UsageDetails from "./views/UsageDetails";
 import Footer from "./components/Footer";
-import MenuBar from "./components/MenuBar";
 import Logo from "./components/Logo";
 import Header from "./components/Header";
+import MenuBarReservation from "./components/MenuBarReservation";
+import MenuBarInformation from "./components/MenuBarInformation";
+
 import NavigationBar from "./components/NavigationBar";
 
 export default function App() {
@@ -26,9 +28,10 @@ export default function App() {
       <NavigationBar />
       <Routes>
         <Route path="/logo" element={<Logo />} />
-        <Route path="/menubar" element={<MenuBar />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/header" element={<Header />} />
+        <Route path="/menuReservation" element={<MenuBarReservation />} />
+        <Route path="/menuInformation" element={<MenuBarInformation />} />
 
         
         <Route path="/cancellation" element={<Cancellation />} />

@@ -5,7 +5,7 @@ export default function NavigationBar() {
 
   // 링크 주소를 배열로 저장
   // : 각 페이지의 경로를 포함
-  const links = ['/logo', '/menubar', '/footer', '/header', '/cancellation', '/hompage', '/lodgingdetails', '/lodginglist', '/lodginglocation', '/reservationcomplete', '/reservationlist', '/reservationpage', '/reviewedit', '/reviewpage', '/signin', '/signup', '/usagedetails'];
+  const links = ['/logo', '/menubar', '/footer', '/header', '/cancellation', '/hompage', '/lodgingdetails', '/lodginglist', '/lodginglocation', '/reservationcomplete', '/reservationlist', '/reservationpage', '/reviewedit', '/reviewpage', '/signin', '/signup', '/usagedetails', '/menuReservation', '/menuInformation'];
 
   return (
     <div style={{
