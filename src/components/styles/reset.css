@@ -19,6 +19,7 @@ body,
   margin: 0;
   /* font-family: 'Cafe24Meongi-B-v1.0'; */
   font-family: 'KimjungchulMyungjo-Bold';
+  cursor: pointer;
 }
 
 li {
