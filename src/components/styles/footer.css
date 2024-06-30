@@ -8,10 +8,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  line-height: 180px;
+  line-height: 170px;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 p {
   color: #fff;
+  font-size: 20px;
 }
 
