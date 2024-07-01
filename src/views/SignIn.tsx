@@ -1,80 +1,103 @@
-import * as React from 'react'
+/* eslint-disable no-unreachable */
+import '../styles/reset.css';
 import '../styles/signIn.css';
+import * as React from 'react';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-import AlertTitle from '@mui/material/AlertTitle';
+import { useNavigate } from 'react-router-dom';
 
 // 로그인에 필요한 객체들 타입 정의
-interface SignInForm {
+interface SigninForm {
   userId: string;
   password: string;
 };
 
 export default function SignIn() {
-  // 폼 데이터 상태 관리
-  const [formData, setFormData] = React.useState<SignInForm>({
+  // 페이지 이동
+  const navigate = useNavigate();
+
+  // 로그인 폼 상태 관리
+  const [formState, setFormState] = React.useState<SigninForm>({
     userId: '',
     password: ''
   });
+  // 에러 상태 관리
+  const [error, setError] = React.useState<string | null>(null);
 
-  // 입력 필드 변경을 감지하는 이벤트 핸들러 함수
+  // 입력란 값을 감지해서 내용을 바꾸는 함수
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
 
-    setFormData({
-      ...formData,
+    setFormState({
+      ...formState,
       [name]: value
-    })
-  };
-
-  // 유효성 검사 함수
-  const validateUserId = (userId: string) => {
-    if (userId.trim() === '') {
-      return  <Stack sx={{ width: '100%' }} spacing={2}>
-        <Alert variant="outlined" severity="error">
-          아이디를 입력해주세요.
-        </Alert>
-      </Stack>
-    }
-  };
-
-  const validatePassword = (password: string) => {
-    if (password.trim() === '') {
-      return  <Stack sx={{ width: '100%' }} spacing={2}>
-        <Alert variant="outlined" severity="error">
-          비밀번호를 입력해주세요.
-        </Alert>
-      </Stack>
-    }
+    });
   };
 
   // 폼 제출 함수
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const userIdError = validateUserId(formData.userId);
-    const passworedError = validatePassword(formData.password);
+    // 로그인을 위한 API 호출
+    try {
+      const response = await fetch('apis/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formState),
+      })
+
+      // 데이터를 제대로 못 들고 왔을 때
+      if (!response.ok) {
+        throw new Error('로그인 실패');
+      }
+
+      const data = await response.json();
+      return (
+        <Stack sx={{ width: '100%' }} spacing={2}>
+          <Alert variant="outlined" severity="success">
+            {`로그인에 성공하셨습니다. ${data}`}
+          </Alert>
+        </Stack>
+      )
+      // 성공 시 페이지 이동
+      navigate('/homepage');
+    } catch(error) {
+      setError((error as Error).message);
+      return (
+        <Stack sx={{ width: '100%' }} spacing={2}>
+          <Alert variant="outlined" severity="error">
+            로그인에 실패하셨습니다.
+          </Alert>
+        </Stack>
+      )
+    }
   };
 
   return (
     <>
-      <form className='box'>
+      <form className='box' onSubmit={handleSubmit}>
         <img src='images/wabangbSmall.png' alt="logo" />
         <input
           type="text"
           placeholder='아이디'
-          autoFocus
-          onChange={handleInputChange}
           name='userId'
-          // value={userId}
+          id='userId'
+          value={formState.userId}
+          onChange={handleInputChange}
+          required
         />
         <input
-          type="text"
+          type="password"
           placeholder='비밀번호'
-          onChange={handleInputChange}
           name='password'
-          // value={password}
+          id='password'
+          value={formState.password}
+          onChange={handleInputChange}
+          required
         />
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <button type='submit'>Sign in</button>
       </form>
     </>

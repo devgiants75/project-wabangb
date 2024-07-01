@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import React from 'react'
-import '../styles/footer.css';
-=======
-
 import React from "react";
 import "../styles/footer.css";
->>>>>>> develop
 
 export default function Footer() {
   return (
