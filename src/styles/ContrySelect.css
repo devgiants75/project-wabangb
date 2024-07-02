@@ -8,7 +8,6 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
 }
 
 a img {
@@ -22,15 +21,40 @@ a img {
   overflow: hidden;
   border: 1px solid black;
   display: flex;
+}
+
+.slide-img ul {
+  display: flex;
   flex-direction: row;
 }
 
-.container-imgs ul {
-  box-sizing: gborder-box;
+.slide-img div {
+  display: flex;
+  flex-direction: row;
+}
+
+.slide-img1 {
+  animation: slide 10s infinite ;
+}
+
+.slide-img2 {
+  animation: slide 10s infinite ;
+}
+
+.slide-img3{
+  animation: slide 10s infinite ;
+}
+
+.container-imgs div {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-imgs .slide-con{
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   list-style-type: none;
   padding: 0;
 }
@@ -45,9 +69,112 @@ a img {
   color: black;
 }
 
-.container-imgs div {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%) ;
+  }
+  10% {
+    transform: translateX(10%) ;
+  }
+  20% {
+    transform: translateX(20%) ;
+  }
+  30% {
+    transform: translateX(30%) ;
+  }
+  40% {
+    transform: translateX(40%) ;
+  }
+  50% {
+    transform: translateX(50%) ;
+  }
+  60% {
+    transform: translateX(60%) ;
+  }
+  70% {
+    transform: translateX(70%) ;
+  }
+  80% {
+    transform: translateX(80%) ;
+  }
+  90% {
+    transform: translateX(90%) ;
+  }
+  100% {
+    transform: translateX(100%) ;
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    transform: translateX(15%) ;
+  }
+  10% {
+    transform: translateX(25%) ;
+  }
+  20% {
+    transform: translateX(35%) ;
+  }
+  30% {
+    transform: translateX(45%) ;
+  }
+  40% {
+    transform: translateX(55%) ;
+  }
+  50% {
+    transform: translateX(65%) ;
+  }
+  60% {
+    transform: translateX(75%) ;
+  }
+  70% {
+    transform: translateX(85%) ;
+  }
+  80% {
+    transform: translateX(95%) ;
+  }
+  90% {
+    transform: translateX(105%) ;
+  }
+  100% {
+    transform: translateX(115%) ;
+  }
+}
+
+@keyframes slide3 {
+  0% {
+    transform: translateX(25%) ;
+  }
+  10% {
+    transform: translateX(35%) ;
+  }
+  20% {
+    transform: translateX(45%) ;
+  }
+  30% {
+    transform: translateX(55%) ;
+  }
+  40% {
+    transform: translateX(65%) ;
+  }
+  50% {
+    transform: translateX(75%) ;
+  }
+  60% {
+    transform: translateX(85%) ;
+  }
+  70% {
+    transform: translateX(95%) ;
+  }
+  80% {
+    transform: translateX(105%) ;
+  }
+  90% {
+    transform: translateX(115%) ;
+  }
+  100% {
+    transform: translateX(125%) ;
+  }
 }
