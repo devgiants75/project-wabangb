@@ -6,10 +6,10 @@ function ContrySelect() {
   return (
     <div className="container-imgs">
       <div>
-        <div className="slide-img">
+        <div className="slide-img1">
           <ul>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/a">
                   <img src={require("../assets/기장.jpg")} alt="" />
                 </a>
@@ -17,7 +17,7 @@ function ContrySelect() {
               </div>
             </li>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/b">
                   <img src={require("../assets/부산.jpg")} alt="" />
                 </a>
@@ -25,7 +25,7 @@ function ContrySelect() {
               </div>
             </li>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/c">
                   <img src={require("../assets/울산.jpg")} alt="" />
                 </a>
@@ -34,10 +34,10 @@ function ContrySelect() {
             </li>
           </ul>
         </div>
-        <div className="slide-img">
+        <div className="slide-img2">
           <ul>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/a">
                   <img src={require("../assets/기장.jpg")} alt="" />
                 </a>
@@ -45,7 +45,7 @@ function ContrySelect() {
               </div>
             </li>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/b">
                   <img src={require("../assets/부산.jpg")} alt="" />
                 </a>
@@ -53,7 +53,7 @@ function ContrySelect() {
               </div>
             </li>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/c">
                   <img src={require("../assets/울산.jpg")} alt="" />
                 </a>
@@ -62,10 +62,10 @@ function ContrySelect() {
             </li>
           </ul>
         </div>
-        <div className="slide-img">
+        <div className="slide-img3">
           <ul>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/a">
                   <img src={require("../assets/기장.jpg")} alt="" />
                 </a>
@@ -73,7 +73,7 @@ function ContrySelect() {
               </div>
             </li>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/b">
                   <img src={require("../assets/부산.jpg")} alt="" />
                 </a>
@@ -81,7 +81,7 @@ function ContrySelect() {
               </div>
             </li>
             <li>
-              <div>
+              <div className="slide-con">
                 <a href="/c">
                   <img src={require("../assets/울산.jpg")} alt="" />
                 </a>
