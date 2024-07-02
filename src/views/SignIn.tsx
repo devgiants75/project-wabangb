@@ -2,7 +2,7 @@
 import '../styles/reset.css';
 import '../styles/signIn.css';
 import * as React from 'react';
-import Alert from '@mui/material/Alert';
+import Alert, { AlertColor } from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,6 +23,8 @@ export default function SignIn() {
   });
   // 에러 상태 관리
   const [error, setError] = React.useState<string | null>(null);
+  // 알림창 상태 관리
+  const [alert, setAlert] = React.useState<{ message: string; severity: AlertColor } | null>(null);
 
   // 입력란 값을 감지해서 내용을 바꾸는 함수
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,9 +41,10 @@ export default function SignIn() {
     e.preventDefault();
 
     // 로그인을 위한 API 호출
+    //* apis/login 데이터 파일 생성해야 함.
     try {
       const response = await fetch('apis/login', {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -54,29 +57,48 @@ export default function SignIn() {
       }
 
       const data = await response.json();
-      return (
-        <Stack sx={{ width: '100%' }} spacing={2}>
-          <Alert variant="outlined" severity="success">
-            {`로그인에 성공하셨습니다. ${data}`}
-          </Alert>
-        </Stack>
-      )
-      // 성공 시 페이지 이동
-      navigate('/homepage');
+      console.log('로그인 성공 : ', data);
+
+      // 알림창 표시
+      setAlert({message: '로그인 성공!', severity: 'success'});
+
+      // 입력란 초기화
+      setFormState({
+        userId: '',
+        password: ''
+      });
+
+      // 로그인 성공 후 홈페이지 이동
+      setTimeout(() => {
+        setAlert(null);
+        navigate('/homepage');
+      }, 2000);
     } catch(error) {
       setError((error as Error).message);
-      return (
-        <Stack sx={{ width: '100%' }} spacing={2}>
-          <Alert variant="outlined" severity="error">
-            로그인에 실패하셨습니다.
-          </Alert>
-        </Stack>
-      )
+      // 알림창 표시
+      setAlert({message: '로그인 실패. 다시 시도해주세요.', severity: 'error'})
+      // 입력란 초기화
+      setFormState({
+        userId: '',
+        password: ''
+      });
+
+      // 일정 시간 후에 알림 숨김
+      setTimeout(() => {
+        setAlert(null);
+      }, 3000);
     }
   };
 
   return (
     <>
+      <Stack sx={{ width: '100%' }} spacing={2}>
+        {alert && (
+          <Alert variant="outlined" severity={alert.severity}>
+            {alert.message}
+          </Alert>
+        )}
+      </Stack>
       <form className='box' onSubmit={handleSubmit}>
         <img src='images/wabangbSmall.png' alt="logo" />
         <input
@@ -97,7 +119,6 @@ export default function SignIn() {
           onChange={handleInputChange}
           required
         />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
         <button type='submit'>Sign in</button>
       </form>
     </>
