@@ -6,7 +6,7 @@ function ContrySelect() {
   return (
     <div className="container-imgs">
       <div>
-        <div className="slide-img1">
+        <div className="slide-img">
           <ul>
             <li>
               <div className="slide-con">
@@ -34,7 +34,7 @@ function ContrySelect() {
             </li>
           </ul>
         </div>
-        <div className="slide-img2">
+        <div className="slide-img">
           <ul>
             <li>
               <div className="slide-con">
@@ -62,7 +62,7 @@ function ContrySelect() {
             </li>
           </ul>
         </div>
-        <div className="slide-img3">
+        <div className="slide-img">
           <ul>
             <li>
               <div className="slide-con">
