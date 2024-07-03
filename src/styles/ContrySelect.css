@@ -23,31 +23,20 @@ a img {
   display: flex;
 }
 
-.slide-img ul {
-  display: flex;
-  flex-direction: row;
+
+.slide-img {
+  animation: slide 5s infinite ;
 }
 
-.slide-img div {
-  display: flex;
-  flex-direction: row;
-}
-
-.slide-img1 {
-  animation: slide 10s infinite ;
-}
-
-.slide-img2 {
-  animation: slide 10s infinite ;
-}
-
-.slide-img3{
-  animation: slide 10s infinite ;
-}
 
 .container-imgs div {
   display: flex;
-  flex-direction: row;
+
+}
+
+
+.slide-img li{
+  display: flex;
 }
 
 .container-imgs .slide-con{
@@ -104,77 +93,5 @@ a img {
   }
   100% {
     transform: translateX(100%) ;
-  }
-}
-
-@keyframes slide2 {
-  0% {
-    transform: translateX(15%) ;
-  }
-  10% {
-    transform: translateX(25%) ;
-  }
-  20% {
-    transform: translateX(35%) ;
-  }
-  30% {
-    transform: translateX(45%) ;
-  }
-  40% {
-    transform: translateX(55%) ;
-  }
-  50% {
-    transform: translateX(65%) ;
-  }
-  60% {
-    transform: translateX(75%) ;
-  }
-  70% {
-    transform: translateX(85%) ;
-  }
-  80% {
-    transform: translateX(95%) ;
-  }
-  90% {
-    transform: translateX(105%) ;
-  }
-  100% {
-    transform: translateX(115%) ;
-  }
-}
-
-@keyframes slide3 {
-  0% {
-    transform: translateX(25%) ;
-  }
-  10% {
-    transform: translateX(35%) ;
-  }
-  20% {
-    transform: translateX(45%) ;
-  }
-  30% {
-    transform: translateX(55%) ;
-  }
-  40% {
-    transform: translateX(65%) ;
-  }
-  50% {
-    transform: translateX(75%) ;
-  }
-  60% {
-    transform: translateX(85%) ;
-  }
-  70% {
-    transform: translateX(95%) ;
-  }
-  80% {
-    transform: translateX(105%) ;
-  }
-  90% {
-    transform: translateX(115%) ;
-  }
-  100% {
-    transform: translateX(125%) ;
   }
 }
