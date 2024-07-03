@@ -32,15 +32,6 @@ export default function Header() {
           <Logo />
         </div>
       </div>
-      <div>
-        <Main_Search></Main_Search>
-      </div>
-      <div>
-        <ContrySelect></ContrySelect>
-      </div>
-      <div>
-        <Footer></Footer>
-      </div>
     </div>
   );
 }
