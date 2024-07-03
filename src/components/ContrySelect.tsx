@@ -1,11 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { Route, Routes } from "react-router-dom";
 import "../styles/ContrySelect.css";
 
 function ContrySelect() {
   return (
     <div className="container-imgs">
-      <div>
         <div className="slide-img">
           <ul>
             <li>
@@ -33,8 +31,6 @@ function ContrySelect() {
               </div>
             </li>
           </ul>
-        </div>
-        <div className="slide-img">
           <ul>
             <li>
               <div className="slide-con">
@@ -61,8 +57,7 @@ function ContrySelect() {
               </div>
             </li>
           </ul>
-        </div>
-        <div className="slide-img">
+
           <ul>
             <li>
               <div className="slide-con">
@@ -91,7 +86,6 @@ function ContrySelect() {
           </ul>
         </div>
       </div>
-    </div>
   );
 }
 
