@@ -1,0 +1,84 @@
+.loadging-info {
+  display: flex;
+  height: 600px;
+}
+.loadging-container{
+  box-sizing: border-box;
+  border: 1px solid black;
+  overflow-y: scroll;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  margin-right: 10px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.loadging-mainimg {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.loadging-subimg {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.loadging-Info-container {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+
+.loadging-Info-reservation{
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.reservation-btn{
+  box-sizing: border-box;
+  width: 100px;
+  height: 50px;
+  /* padding: 10px; */
+  margin: 10px;
+}
+
+.loadging-reservation-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadging-reservation-info{
+  
+  width: 350px;
+  height: 350px;
+  border: 1px solid black;
+  padding: 0 auto;
+}
+
+.loadging-detail-container {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadging-detail-address{
+  box-sizing: border-box;
+  width: 350px;
+  height: 150px;
+  border: 1px solid black;
+  margin: 0px auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
