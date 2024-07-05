@@ -21,6 +21,8 @@ import MenuBarReservation from "./components/MenuBarReservation";
 import MenuBarInformation from "./components/MenuBarInformation";
 
 import NavigationBar from "./components/NavigationBar";
+import LodgingDetailInfo from "./components/LodgingDetailInfo";
+import LodgingInfo from "./components/LodgingReview";
 
 export default function App() {
   return (
@@ -32,6 +34,8 @@ export default function App() {
         <Route path="/header" element={<Header />} />
         <Route path="/menuReservation" element={<MenuBarReservation />} />
         <Route path="/menuInformation" element={<MenuBarInformation />} />
+        <Route path="/LodgingDetailInfo" element={<LodgingDetailInfo />}></Route>
+        <Route path="/LodgingInfo" element={<LodgingInfo />}></Route>
 
         
         <Route path="/cancellation" element={<Cancellation />} />

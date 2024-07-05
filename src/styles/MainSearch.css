@@ -49,7 +49,7 @@ body {
 }
 
 .search-element input,
-button {
+.search-button {
   box-sizing: border-box;
   height: 50px;
   width: 200px;

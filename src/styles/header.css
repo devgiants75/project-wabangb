@@ -4,13 +4,13 @@
   background-color: #d9d9d9;
 }
 
-.bar-container ul {
+.bar-container-ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.bar-container ul li {
+.bar-container-li {
   padding-right: 10px;
   font-size: 18px;
 }

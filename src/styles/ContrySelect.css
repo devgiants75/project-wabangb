@@ -10,7 +10,7 @@ body {
   display: flex;
 }
 
-a img {
+.slide-a img {
   width: 300px;
   height: 250px;
   padding: 0px 15px;
@@ -25,6 +25,7 @@ a img {
 
 
 .slide-img {
+  width: 600px;
   animation: slide 5s infinite ;
 }
 
@@ -35,8 +36,9 @@ a img {
 }
 
 
-.slide-img li{
+.slide-img ul{
   display: flex;
+  flex-direction: row;
 }
 
 .container-imgs .slide-con{
@@ -93,5 +95,8 @@ a img {
   }
   100% {
     transform: translateX(100%) ;
+  }
+  110% {
+    transform: translateX(-10%) ;
   }
 }
