@@ -2,41 +2,39 @@
   box-sizing: border-box;
 }
 
-:root {
-  --padding: 60px;
-}
-
 .box {
   position: relative;
   margin: 150px auto;
-  width: 400px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--padding);
+  padding: 60px;
   background-color: #A0DEFF;
   border-radius: 7px;
 }
 
 .box img {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
-.box input,
-.box button {
+.box .singinInput,
+.box .signinButton {
   padding: 15px;
   font-size: 1.2em;
   border: none;
 }
 
-.box input {
+.box .singinInput {
   margin-bottom: 25px;
 }
 
-.box button {
+.box .signinButton {
   background-color: #FFFDCB;
   color: #1989ca;
   border-radius: 4px;
   cursor: pointer;
-  width: 280px;
+  width: 100%;
+  height: 55px;
+  margin-top: 20px;
 }
