@@ -58,7 +58,7 @@ export default function SignUp() {
               placeholder='관심 여행지'
             />
           </div>
-        <button type='submit'>회원가입</button>
+        <button className='signupButton' type='submit'>회원가입</button>
         </form>
       </main>
       <Footer />
