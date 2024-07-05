@@ -102,6 +102,7 @@ export default function SignIn() {
       <form className='box' onSubmit={handleSubmit}>
         <img src='images/wabangbSmall.png' alt="logo" />
         <input
+          className='singinInput'
           type="text"
           placeholder='아이디'
           name='userId'
@@ -111,6 +112,7 @@ export default function SignIn() {
           required
         />
         <input
+          className='singinInput'
           type="password"
           placeholder='비밀번호'
           name='password'
@@ -119,7 +121,7 @@ export default function SignIn() {
           onChange={handleInputChange}
           required
         />
-        <button type='submit'>Sign in</button>
+        <button className='signinButton' type='submit'>Sign in</button>
       </form>
     </>
   )
