@@ -52,4 +52,10 @@
     border: none;
     box-shadow: 2px 5px 2px #3983c4;
     cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.errorMessage {
+    color: red;
 }
