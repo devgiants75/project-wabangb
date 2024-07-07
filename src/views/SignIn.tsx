@@ -84,9 +84,9 @@ export default function SignIn() {
       });
 
       // 일정 시간 후에 알림 숨김
-      setTimeout(() => {
-        setAlert(null);
-      }, 3000);
+      // setTimeout(() => {
+      //   setAlert(null);
+      // }, 3000);
     }
   };
 

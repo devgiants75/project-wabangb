@@ -5,10 +5,14 @@ import Footer from '../components/Footer';
 import * as React from 'react';
 import Alert, { AlertColor } from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-// import ReactModal from 'react-modal';
 
-//# 모달창 요소 세팅
-// ReactModal.setAppElement('#root');
+// 모달창 import
+import Checkbox from '@mui/material/Checkbox';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import { useNavigate } from 'react-router-dom';
 
 //# 회원가입에 필요한 객체 인터페이스 정의
 
@@ -27,7 +31,7 @@ interface SignupRequiredForm {
 // 선택 입력란 - 관심 여행지 여러 가지로 받기
 // 택 중 하나만 값을 받을거면 타입이름만, 여러 값을 받을거면 옆에 []붙여서 배열형태로~
 // 여행지 목록 - 택 중 하나만 선택 - 유니온 타입으로 값들 정의
-type Travel = '서울' | '부산' | '제주도' | '유럽' | '미국' | '영국';
+type Travel = '서울' | '부산' | '제주도' | '유럽' | '미국' | '영국' | '베트남' | '경주' | '일본' | '대구';
 interface TravelOptionsForm {
   travelOptions?: Travel[]; 
 };
@@ -57,6 +61,9 @@ export default function SignUp() {
   });
   // 알림창 상태 관리
   const [alert, setAlert] = React.useState<{ message: string; severity: AlertColor } | null>(null);
+
+  // 페이지 이동
+  const navigate = useNavigate();
 
   //# 유효성 검사 함수들
   const validateId = (id: string) => id.length >= 3 && /^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}%/.test(id);
@@ -117,10 +124,13 @@ export default function SignUp() {
     // 유효성 검사 함수 호출 - 내용이 유효하다면 전송, 유효하지 않다면 전송X
     if (validateForm()) {
       console.log('폼의 내용이 유효합니다. 데이터 전송', signupFormState);
-      setAlert({message: '회원가입이 완료되었습니다.', severity: 'success'});
+      setAlert({message: '회원가입이 완료되었습니다.', severity: "success"});
+
+      // 성공 시 로그인 페이지로 이동
+      navigate('/signin');
     } else {
       console.log('폼의 내용이 유효하지 않습니다.');
-      setAlert({message: '회원가입에 실패했습니다.', severity: 'error'});
+      setAlert({message: '회원가입에 실패했습니다.', severity: "error"});
     }
   };
 
@@ -136,16 +146,21 @@ export default function SignUp() {
   } = errors;
 
   //# 모달창 ====================================================================
-  // 모달창 열기 상태 관리
-  const [modalIsOpen, setModalIsOpen] = React.useState(false);
+  const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+  const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
+  const top100Films = [
+    { title: '서울' },
+    { title: '부산' },
+    { title: '제주도' },
+    { title: '유럽' },
+    { title: '미국' },
+    { title: '영국' },
+    { title: '베트남' },
+    { title: '경주' },
+    { title: '일본' },
+    { title: '대구' }
+  ];
 
   return (
     <>
@@ -225,11 +240,33 @@ export default function SignUp() {
             {phoneNumberError && <span className='errorMessage'>{phoneNumberError}</span>}
           </div>
 
+          {/* MUI CHECK BOX */}
           <h3>관심 여행지</h3>
-          <div className='textForm'>
-            <input
-              type="text"
-              placeholder='관심 여행지'
+          <div>
+            <Autocomplete
+              multiple
+              id="checkboxes-tags-demo"
+              options={top100Films}
+              disableCloseOnSelect
+              getOptionLabel={(option) => option.title}
+              renderOption={(props, option, { selected }) => {
+                const { key, ...optionProps } = props;
+                return (
+                  <li key={key} {...optionProps}>
+                    <Checkbox
+                      icon={icon}
+                      checkedIcon={checkedIcon}
+                      style={{ marginRight: 8 }}
+                      checked={selected}
+                    />
+                    {option.title}
+                  </li>
+                );
+              }}
+              style={{ width: "100%" }}
+              renderInput={(params) => (
+                <TextField {...params} label="관심 여행지" placeholder="Favorites" />
+              )}
             />
           </div>
 
