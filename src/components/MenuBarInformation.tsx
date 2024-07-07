@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useNavigate } from 'react-router-dom';
 
-export default function MenuBar() {
+export default function MenuBarInformation() {
   // 메뉴 상태 관리
   const [value, setValue] = React.useState(0);
 
@@ -27,11 +27,13 @@ export default function MenuBar() {
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <Tabs value={value} onChange={handleChange} centered>
-        <Tab 
+        <Tab
+          style={{fontSize: '16px'}}
           label='상세 정보' 
           onClick={goLodgingDetails}
         />
         <Tab 
+          style={{fontSize: '16px'}}
           label='숙소 위치' 
           onClick={goLodingLocation}
         />
