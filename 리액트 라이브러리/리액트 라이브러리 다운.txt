@@ -1,0 +1,6 @@
+리액트 라이브러리 다운
+npm install @mui/x-date-pickers - MUI 날짜 선택기
+npm install @mui/material @emotion/react @emotion/styled - MUI 핵심 패키지, 스타일링
+npm install @mui/icons-material - MUI 아이콘 패키지
+npm install dayjs - 날짜,시간을 처리하기위한 라이브러리 
+npm install react-modal - 모달 설치

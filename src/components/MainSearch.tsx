@@ -1,5 +1,10 @@
-import { RefObject, useRef, useState } from "react";
+import React, { useState } from "react";
 import "../styles/MainSearch.css";
+import dayjs, { Dayjs } from 'dayjs';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import ReactModal from "react-modal";
 
 interface Item {
@@ -10,15 +15,16 @@ interface Item {
 function Main_Search() {
   const [DataList, setDataList] = useState<Item[]>([]);
   const [searchInput, setSearchInput] = useState<string>("");
-  const [fliteredResults, setFliteredResults] = useState<Item[]>([]);
-  const [modalDate, setModalDate] = useState(false);
+  const [filteredResults, setFliteredResults] = useState<Item[]>([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
 
   const openModal = () => {
-    setModalDate(true);
+    setModalOpen(true);
   };
 
   const closeModal = () => {
-    setModalDate(false);
+    setModalOpen(false);
   };
 
   // const searchRef : {
@@ -41,6 +47,12 @@ function Main_Search() {
   //     }
   //   }
   // };
+
+  const handleDateChange = (date: Dayjs | null) => {
+    setSelectedDate(date);
+    setModalOpen(false); // 모달을 닫음
+  };
+
 
   // 결과 리스트 받는
   const searchItems = (searchValue: string) => {
@@ -75,12 +87,24 @@ function Main_Search() {
             <button className="search-date" name="date" onClick={openModal}>
               날짜
             </button>
+
+            {/* 모달 */}
             <ReactModal
-              isOpen={modalDate}
+              isOpen={modalOpen}
               onRequestClose={closeModal}
               className="modal-content"
               overlayClassName="modal-overlay"
-            ></ReactModal>
+            >
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DemoContainer components={['DateCalendar']}>
+                  <DateCalendar
+                    value={selectedDate}
+                    onChange={(newValue) => handleDateChange(newValue as Dayjs)}
+                  />
+                </DemoContainer>
+              </LocalizationProvider>
+            </ReactModal>
+
             <input
               className="search-Personnel"
               placeholder="인원수"
