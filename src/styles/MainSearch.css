@@ -86,3 +86,28 @@ body {
   font-size: 20px;
   font-weight: 700;
 }
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px; 
+  color: #333; 
+  line-height: 1.6; 
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* 오버레이 배경 색상 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
