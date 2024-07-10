@@ -21,12 +21,12 @@ export default function ReservationList() {
             </div>
             <div className='infoBox'>
               <div className='top'>
-                <p>숙소 이름</p>
-                <p>숙소 주소</p>
+                <p className='retext'>베스트루이스해밀턴호텔오션테라스</p>
+                <p className='retext'>부산광역시 기장군 기장읍 연화리 376-4</p>
               </div>
               <div className='bottom'>
-                <span>예약 날짜</span>
-                <button>예약 취소</button>
+                <span >예약 날짜 : 2024-07-10</span>
+                <button className='reserButton'>예약 취소</button>
               </div>
             </div>
           </div>
@@ -39,12 +39,12 @@ export default function ReservationList() {
             </div>
             <div className='infoBox'>
               <div className='top'>
-                <p>숙소 이름</p>
-                <p>숙소 주소</p>
+                <p className='retext'>상상스테이 부산</p>
+                <p className='retext'>부산광역시 부산진구 서면로 39 상상마당 7F</p>
               </div>
               <div className='bottom'>
-                <span>예약 날짜</span>
-                <button>예약 취소</button>
+                <span>예약 날짜 : 2024-08-10</span>
+                <button className='reserButton'>예약 취소</button>
               </div>
             </div>
           </div>
