@@ -113,7 +113,7 @@ function Main_Search() {
               onChange={(e) => searchItems(e.target.value)}
               // onKeyDown={searchRef.person.current}
             />
-            <button className="search-button">검색</button>
+            <button className="search-button" style={{textDecoration:"none"}}>검색</button>
           </div>
         </div>
       </div>
