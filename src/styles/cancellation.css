@@ -1,0 +1,26 @@
+#cancelWrap {
+    width: 100%;
+    background-color: #1989ca;
+}
+
+/* 예상 환불 금액 */
+.refundAmountBox {
+    width: 100%;
+    height: 140px;
+    background-color: #d6ebf5;
+    padding: 20px;
+}
+
+/* 환불 규정 */
+.RefundPolicyBox {
+    width: 100%;
+    height: 500px;
+    background-color: #92c6d2;
+}
+
+/* 동의 & 요청 버튼 */
+.requestAndAgreeBox {
+    width: 100%;
+    height: 150px;
+    background-color: #c1dae0;
+}
