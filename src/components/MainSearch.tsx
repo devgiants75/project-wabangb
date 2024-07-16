@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import "../styles/MainSearch.css";
 import dayjs, { Dayjs } from 'dayjs';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-import ReactModal from "react-modal";
+import CalenderModal from "./CalenderModal";
 
 interface Item {
   [key: string]: any;
@@ -16,41 +12,22 @@ function Main_Search() {
   const [DataList, setDataList] = useState<Item[]>([]);
   const [searchInput, setSearchInput] = useState<string>("");
   const [filteredResults, setFliteredResults] = useState<Item[]>([]);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
 
   const openModal = () => {
-    setModalOpen(true);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setModalOpen(false);
+    setIsModalOpen(false);
   };
 
-  // const searchRef : {
-  //   name: ;
-  //   date: ;
-  //   person: ;
-  // } = {
-  //   name: useRef(),
-  //   date: useRef(),
-  //   person: useRef(),
-  // };
 
-  // const nextSearch = (e) => {
-  //   if (e.keyCode === 13) {
-  //     if (e.target.name === "name") {
-  //       searchRef.date.current.focus();
-  //     }
-  //     if (e.target.date === "date") {
-  //       searchRef.date.current.focus();
-  //     }
-  //   }
-  // };
 
   const handleDateChange = (date: Dayjs | null) => {
     setSelectedDate(date);
-    setModalOpen(false); // 모달을 닫음
+    setIsModalOpen(false); // 모달을 닫음
   };
 
 
@@ -89,21 +66,8 @@ function Main_Search() {
             </button>
 
             {/* 모달 */}
-            <ReactModal
-              isOpen={modalOpen}
-              onRequestClose={closeModal}
-              className="modal-content"
-              overlayClassName="modal-overlay"
-            >
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoContainer components={['DateCalendar']}>
-                  <DateCalendar
-                    value={selectedDate}
-                    onChange={(newValue) => handleDateChange(newValue as Dayjs)}
-                  />
-                </DemoContainer>
-              </LocalizationProvider>
-            </ReactModal>
+            <button onClick={openModal}>달력 열기</button>
+            <CalenderModal isOpen={isModalOpen} onClose={closeModal} />
 
             <input
               className="search-Personnel"

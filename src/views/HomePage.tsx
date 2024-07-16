@@ -5,6 +5,11 @@ import ContrySelect from '../components/ContrySelect'
 import Footer from '../components/Footer'
 
 export default function HomePage() {
+  const images = [
+    '/asset/gijang.jpg',
+    '/asset/ulsan.jpg',
+    '/asset/busan.jpg'
+  ];
   return (
     <div>
       <div>
@@ -14,7 +19,7 @@ export default function HomePage() {
         <Main_Search></Main_Search>
       </div>
       <div>
-        <ContrySelect></ContrySelect>
+        <ContrySelect images={images}/>
       </div>
       <div>
         <Footer></Footer>

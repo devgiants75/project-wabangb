@@ -1,38 +1,43 @@
 /** @jsxImportSource @emotion/react */
+import { useEffect, useState } from "react";
 import "../styles/ContrySelect.css";
 
-function ContrySelect() {
+interface ImageSliderProps {
+  images: string[];
+}
+
+function ContrySelect({ images } : ImageSliderProps) {
+  const [ imageIndex , setImageIndex ] = useState(0);
+
+  useEffect(() => {
+    const interId = setInterval(() => {
+      setImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    }, 2000);
+
+    return () => clearInterval(interId)
+  }, [images.length]);
+
+  const renderImages = images.slice(imageIndex , imageIndex + 5);
+  if (renderImages.length < 5) {
+    renderImages.push(...images.slice(0, 5 - renderImages.length));
+  }
+
+
   return (
     <div className="container-imgs">
         <div className="slide-img">
+          {renderImages.map((image, index) => (
           <ul>
             <li>
-              <div className="slide-con">
+              <div className="slide-con" key={image}>
                 <a className="slide-a" href="/a">
-                  <img src={require("../assets/기장.jpg")} alt="" />
+                  <img src={image} alt={`Slide ${index}`} style={{width:'100%' , height:'auto'}} />
                 </a>
-                <p>기장</p>
-              </div>
-            </li>
-            <li>
-              <div className="slide-con">
-                <a className="slide-a" href="/b">
-                  <img src={require("../assets/부산.jpg")} alt="" />
-                </a>
-                <p>부산</p>
-              </div>
-            </li>
-            <li>
-              <div className="slide-con">
-                <a className="slide-a" href="/c">
-                  <img src={require("../assets/울산.jpg")} alt="" />
-                </a>
-                <p>울산</p>
+                {/* <p >{image}</p> */}
               </div>
             </li>
           </ul>
-
-
+          ))}
         </div>
       </div>
   );

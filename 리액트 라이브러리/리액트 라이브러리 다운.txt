@@ -4,3 +4,5 @@ npm install @mui/material @emotion/react @emotion/styled - MUI 핵심 패키지,
 npm install @mui/icons-material - MUI 아이콘 패키지
 npm install dayjs - 날짜,시간을 처리하기위한 라이브러리 
 npm install react-modal - 모달 설치
+npm install react-datepicker react-modal - 달력 선택
+npm install react-multi-date-picker - 멀티 선택

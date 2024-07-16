@@ -3,6 +3,7 @@
   height: 600px;
 }
 .loadging-container {
+  background-color: rgb(255, 253 , 203);
   box-sizing: border-box;
   border: 1px solid black;
   overflow-y: scroll;
@@ -38,6 +39,7 @@
 }
 
 .loadging-Info-reservation {
+  background-color: rgb(255, 253 , 203);
   display: flex;
   justify-content: end;
   align-items: flex-end;
@@ -61,6 +63,7 @@
 }
 
 .loadging-reservation-container {
+  background-color: rgb(255, 253 , 203);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -75,6 +78,7 @@
 }
 
 .loadging-detail-container {
+  background-color: rgb(255, 253 , 203);
   flex-grow: 1;
   width: 100%;
   display: flex;
