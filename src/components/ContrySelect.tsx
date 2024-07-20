@@ -2,11 +2,15 @@
 import { useEffect, useState } from "react";
 import "../styles/ContrySelect.css";
 
-interface ImageSliderProps {
-  images: string[];
+interface Image {
+  name: string;
+  src: string;
+}
+interface ContrySelectProps {
+  images: Image[];
 }
 
-function ContrySelect({ images } : ImageSliderProps) {
+const ContrySelect: React.FC<ContrySelectProps> = ({ images }) => {
   const [ imageIndex , setImageIndex ] = useState(0);
 
   useEffect(() => {
@@ -26,18 +30,17 @@ function ContrySelect({ images } : ImageSliderProps) {
   return (
     <div className="container-imgs">
         <div className="slide-img">
-          {renderImages.map((image, index) => (
           <ul>
+          {renderImages.map((image) => (
             <li>
-              <div className="slide-con" key={image}>
-                <a className="slide-a" href="/a">
-                  <img src={image} alt={`Slide ${index}`} style={{width:'100%' , height:'auto'}} />
+              <div className="slide-con"  key={image.name}>
+                <a className="slide" href="/a">
+                  <img src={image.src} alt={image.name} className="image" style={{width:'100%' , height:'auto'}} />
                 </a>
-                {/* <p >{image}</p> */}
               </div>
             </li>
-          </ul>
           ))}
+          </ul>
         </div>
       </div>
   );

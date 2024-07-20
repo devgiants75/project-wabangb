@@ -4,12 +4,22 @@ import Main_Search from '../components/MainSearch'
 import ContrySelect from '../components/ContrySelect'
 import Footer from '../components/Footer'
 
-export default function HomePage() {
-  const images = [
-    '/asset/gijang.jpg',
-    '/asset/ulsan.jpg',
-    '/asset/busan.jpg'
+import 기장 from '../assets/기장.jpg';
+import 부산 from '../assets/부산.jpg';
+import 울산 from '../assets/울산.jpg';
+
+interface Image {
+  name: string;
+  src: string;
+}
+
+const HomePage: React.FC = () => {
+  const images: Image[] = [
+    { name: 'image1', src: 기장 },
+    { name: 'image2', src: 부산 },
+    { name: 'image3', src: 울산 }
   ];
+  
   return (
     <div>
       <div>
@@ -19,7 +29,7 @@ export default function HomePage() {
         <Main_Search></Main_Search>
       </div>
       <div>
-        <ContrySelect images={images}/>
+        <ContrySelect images={images} />
       </div>
       <div>
         <Footer></Footer>
@@ -27,3 +37,5 @@ export default function HomePage() {
     </div>
   )
 }
+
+export default HomePage;
