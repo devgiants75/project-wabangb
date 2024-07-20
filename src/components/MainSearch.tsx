@@ -61,13 +61,11 @@ function Main_Search() {
               // onKeyDown={nextSearch}
             />
 
-            <button className="search-date" name="date" onClick={openModal}>
+            {/* 모달 */}
+            <button  className="search-date" name="date" onClick={openModal}>
+            <CalenderModal isOpen={isModalOpen} onClose={closeModal}/>
               날짜
             </button>
-
-            {/* 모달 */}
-            <button onClick={openModal}>달력 열기</button>
-            <CalenderModal isOpen={isModalOpen} onClose={closeModal} />
 
             <input
               className="search-Personnel"
