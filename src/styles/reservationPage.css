@@ -1,0 +1,45 @@
+#reservation-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+/* input box */
+
+.reservation-container {
+    /* width: 650px;
+    height: 550px; */
+    /* 나중에 색 빼야 함 */
+    /* background-color: bisque; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reser-input-container {
+    width: 650px;
+    height: 400px;
+    background-color: #97ceff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.reser-input {
+    width: 500px;
+    height: 80px;
+    border: none;
+    border-radius: 5px;
+}
+
+.reser-input:first-child {
+    margin-bottom: 10px;
+}
