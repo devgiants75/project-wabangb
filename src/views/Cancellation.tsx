@@ -1,11 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MenuBarReservation from '../components/MenuBarReservation'
 import '../styles/reset.css';
 import '../styles/cancellation.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cancellation() {
+
+  // 네비게이트 생성
+  const navigate = useNavigate();
+
+  // 동의 여부 상태 관리
+  const [isAgree, setIsAgree] = useState<boolean>(false);
+
+  // 동의 여부 상태를 받아오는 함수
+  const handleCheckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsAgree(e.target.value === 'agree');
+  }
+
+  // 취소 요청 버튼을 눌렀을 때 함수
+  const handleCancelRequest = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (isAgree) {
+      alert('예약이 취소되었습니다.');
+      navigate('/hompage');
+    } else {
+      alert("동의를 체크해주세요.")
+    }
+  }
+
   return (
     <>
       <Header />
@@ -39,10 +64,24 @@ export default function Cancellation() {
           </div>
         </div>
         <div className='requestAndAgreeBox'>
-          <form className='agreeContainer'>
-            <input type="radio" id='agree' name='consent' value='agree' />
+          <form className='agreeContainer' onSubmit={handleCancelRequest}>
+            <input 
+              type="radio" 
+              id='agree' 
+              name='consent' 
+              value='agree' 
+              checked={isAgree === true}
+              onChange={handleCheckChange}
+            />
             <label htmlFor="agree" className='firstRadio'>동의</label>
-            <input type="radio" id='disagree' name='consent' value='disagree' />
+            <input 
+              type="radio" 
+              id='disagree' 
+              name='consent' 
+              value='disagree' 
+              checked={isAgree === false}
+              onChange={handleCheckChange}
+            />
             <label htmlFor="disagree">미동의</label>
 
             <div>
