@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/reset.css';
@@ -6,6 +6,14 @@ import '../styles/reservationPage.css';
 //# 예약페이지
 
 export default function ReservationPage() {
+  // 전화 번호 상태 관리
+  const [telNumber, setTelNumber] = useState<String | null>(null);
+
+  // 전화번호가 입력된 경우 제출, 미입력 시 알림창 띄우고 input창 비우기
+  const handleTelNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
+    
+  }
+
   return (
     <>
       <Header />
@@ -25,7 +33,7 @@ export default function ReservationPage() {
                 <input 
                   className='reser-input'
                   type="text" 
-                  placeholder='전화번호를 입력하세요.'
+                  placeholder="'-' 없이 전화번호를 입력하세요."
                 />
               </div>
             </div>

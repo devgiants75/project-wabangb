@@ -38,8 +38,25 @@
     height: 80px;
     border: none;
     border-radius: 5px;
+    padding-left: 15px;
+    font-size: 20px;
+    box-shadow: 2px 3px 4px rgb(201, 197, 197);
 }
 
 .reser-input:first-child {
     margin-bottom: 10px;
+}
+
+.reser-button {
+    width: 650px;
+    height: 75px;
+    margin-top: 30px;
+    border: none;
+    background-color: rgb(254, 246, 138);
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px rgb(219, 210, 92);
+    font-size: 20px;
+    color: rgb(103, 173, 201);
+    font-weight: 700;
+    cursor: pointer;
 }
