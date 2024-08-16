@@ -60,3 +60,7 @@
     font-weight: 700;
     cursor: pointer;
 }
+
+.reser-button:hover {
+    background-color: rgba(254, 246, 138, 0.7);;
+}

@@ -1,0 +1,34 @@
+{
+    "users": [
+        {
+            "id": "abc123",
+            "password": "abc123",
+            "name": "홍길동",
+            "tel_number": "01012341234",
+            "trip-info": "lodging 내용을 담고 싶은데..." 
+        },
+        {
+            "id": "qwe123",
+            "password": "qwe123",
+            "name": "송혜교",
+            "tel_number": "01012345678",
+            "trip-info": "lodging 내용을 담고 싶은데..."  
+        }
+    ],
+    "lodging": [
+        {
+            "name": "부산바다",
+            "address": "부산광역시 해운대",
+            "address_deep": "11-12번지 바다맑을로",
+            "mount": 200000,
+            "reservation_date": ""
+        },
+        {
+            "name": "제주바다",
+            "address": "제주특별시 제주한라봉",
+            "address_deep": "13-1번지 유채꽃보로",
+            "mount": 250000,
+            "reservation_date": ""
+        }
+    ]
+}
