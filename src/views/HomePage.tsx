@@ -3,9 +3,6 @@ import Header from '../components/Header'
 import Main_Search from '../components/MainSearch'
 import ContrySelect from '../components/ContrySelect'
 import Footer from '../components/Footer'
-import  '../styles/기장.jpg'
-import  '../styles/울산.jpg'
-import  '../styles/부산.jpg'
 
 import 기장 from '../assets/기장.jpg';
 import 부산 from '../assets/부산.jpg';
@@ -29,13 +26,13 @@ const HomePage: React.FC = () => {
         <Header></Header>
       </div>
       <div>
-        <Main_Search></Main_Search>
+        <Main_Search />
       </div>
       <div>
         <ContrySelect images={images} />
       </div>
       <div>
-        <Footer></Footer>
+        <Footer/>
       </div>
     </div>
   )

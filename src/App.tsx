@@ -3,7 +3,7 @@ import "./App.css";
 import HomePage from "./views/HomePage";
 import { Route, Routes } from "react-router-dom";
 import Cancellation from "./views/Cancellation";
-import LodgingDetails from "./views/LodgingDetails";
+import LodgingDetails from "./views/LodgingDetail/LodgingDetails";
 import LodgingList from "./views/LodgingList";
 import LodgingLocation from "./views/LodgingLocation";
 import ReservationComplete from "./views/ReservationComplete";

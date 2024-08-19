@@ -1,16 +1,16 @@
 .loadging-info {
   display: flex;
   height: 600px;
+  background-color: rgb(255, 253 , 203);
 }
 .loadging-container {
-  background-color: rgb(255, 253 , 203);
   box-sizing: border-box;
   border: 1px solid black;
   overflow-y: scroll;
   width: 50%;
   height: 100%;
   display: flex;
-  margin-right: 10px;
+  padding-right: 10px;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -20,26 +20,25 @@
   box-sizing: border-box;
   width: 50%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .loadging-subimg {
   box-sizing: border-box;
   width: 50%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .loadging-Info-container {
   box-sizing: border-box;
   width: 50%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-left: 10px;
 }
 
 .loadging-Info-reservation {
-  background-color: rgb(255, 253 , 203);
   display: flex;
   justify-content: end;
   align-items: flex-end;
