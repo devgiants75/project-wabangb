@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import MenuBarReservation from '../components/MenuBarReservation'
 import '../styles/reset.css';
 import '../styles/cancellation.css';
 import { useNavigate } from 'react-router-dom';
+import CancellReFund from '../components/CancellReFund';
 
 export default function Cancellation() {
 
@@ -34,16 +34,18 @@ export default function Cancellation() {
   return (
     <>
       <Header />
-      <MenuBarReservation />
 
       <main id='cancelWrap'>
-        <div className='refundAmountBox'>
+        <CancellReFund />
+
+        {/* <div className='refundAmountBox'>
           <div className='amountTop'>예상 환불 금액</div>
           <div className='amountBottom'>
             <span className='amount'>1,000,000</span>
             <span>원</span>
           </div>
-        </div>
+        </div> */}
+
         <div className='RefundPolicyBox'>
           <div className='RefundPolicy'>
             <h3 className='refundTitle'>1. 환불 규정</h3>
