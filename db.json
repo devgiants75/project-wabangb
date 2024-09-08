@@ -1,22 +1,25 @@
 {
     "users": [
         {
-            "id": "abc123",
+            "id": 1,
+            "username": "abc123",
             "password": "abc123",
             "name": "홍길동",
-            "tel_number": "01012341234",
-            "trip-info": "lodging 내용을 담고 싶은데..." 
+            "telNumber": "01012341234",
+            "lodgingId": 1
         },
         {
-            "id": "qwe123",
+            "id": 2,
+            "username": "qwe123",
             "password": "qwe123",
             "name": "송혜교",
-            "tel_number": "01012345678",
-            "trip-info": "lodging 내용을 담고 싶은데..."  
+            "telNumber": "01012345678",
+            "lodgingId": 2
         }
     ],
-    "lodging": [
+    "lodgings": [
         {
+            "id": 1,
             "name": "부산바다",
             "address": "부산광역시 해운대",
             "address_deep": "11-12번지 바다맑을로",
@@ -26,6 +29,7 @@
             "image_url": "https://example.com/images/busan.jpg"
         },
         {
+            "id": 2,
             "name": "제주바다",
             "address": "제주특별시 제주한라봉",
             "address_deep": "13-1번지 유채꽃보로",

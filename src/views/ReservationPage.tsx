@@ -5,6 +5,7 @@ import '../styles/reset.css';
 import '../styles/reservationPage.css';
 import ReactModal from 'react-modal';
 import '../styles/reservation-modal.css';
+import ReserInfoComponent from '../components/ReserInfoComponent';
 //# 예약페이지
 
 export default function ReservationPage() {
@@ -28,7 +29,9 @@ export default function ReservationPage() {
       <main id='reservation-main'>
         <div className='reservation-container'>
           <div className='reser-input-container'>
-            <div className='reser-input-box'>
+            <ReserInfoComponent />
+
+            {/* <div className='reser-input-box'>
               <div>
                 <input
                   className='reser-input'
@@ -44,7 +47,8 @@ export default function ReservationPage() {
                   placeholder="'-' 없이 전화번호를 입력하세요."
                 />
               </div>
-            </div>
+            </div> */}
+
           </div>
           <div className='request-box'>
             <button onClick={openModal} className='reser-button open-modal-button'>예약 요청</button>

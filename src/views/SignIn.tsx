@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 import { useNavigate } from 'react-router-dom';
 
 // 로그인에 필요한 객체들 타입 정의
-interface SigninForm {
+export interface SigninForm {
   userId: string;
   password: string;
 };
@@ -16,7 +16,7 @@ export default function SignIn() {
   // 페이지 이동
   const navigate = useNavigate();
 
-  // 로그인 폼 상태 관리
+  //& 로그인 폼 상태 관리
   const [formState, setFormState] = React.useState<SigninForm>({
     userId: '',
     password: ''
@@ -26,7 +26,7 @@ export default function SignIn() {
   // 알림창 상태 관리
   const [alert, setAlert] = React.useState<{ message: string; severity: AlertColor } | null>(null);
 
-  // 입력란 값을 감지해서 내용을 바꾸는 함수
+  //& 입력란 값을 감지해서 내용을 바꾸는 함수
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
 
