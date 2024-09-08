@@ -1,49 +1,52 @@
 import React, { useState } from "react";
 import "../styles/MainSearch.css";
 import dayjs, { Dayjs } from 'dayjs';
-import CalenderModal from "./CalenderModal";
+import CalendarModal from "./CalenderModal";
 
 interface Item {
   [key: string]: any;
 }
 
+const DataList: Item[] = [
+  { id: 1, name: "Seoul", description: "Capital of South Korea" },
+  { id: 2, name: "Busan", description: "Port city in South Korea" },
+  { id: 3, name: "Incheon", description: "City near Seoul" },
+  // Add more items as needed
+];
 // 검색 결과 기능
-function Main_Search() {
-  const [DataList, setDataList] = useState<Item[]>([]);
-  const [searchInput, setSearchInput] = useState<string>("");
-  const [filteredResults, setFliteredResults] = useState<Item[]>([]);
+export default function MainSearch() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredResults, setFilteredResults] = useState(DataList);
 
   const openModal = () => {
+    console.log("on");
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
+    console.log("off");
     setIsModalOpen(false);
   };
 
-
-
-  const handleDateChange = (date: Dayjs | null) => {
+  const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
-    setIsModalOpen(false); // 모달을 닫음
+    closeModal();
   };
 
-
-  // 결과 리스트 받는
   const searchItems = (searchValue: string) => {
     setSearchInput(searchValue);
-    if (searchInput !== "") {
-      const filterdData = DataList.filter((item) => {
+    if (searchValue !== "") {
+      const filteredData = DataList.filter((item) => {
         return Object.values(item)
           .join("")
           .toLowerCase()
           .includes(searchValue.toLowerCase());
       });
-      setFliteredResults(filterdData);
+      setFilteredResults(filteredData);
     } else {
-      setFliteredResults(DataList);
+      setFilteredResults(DataList);
     }
   };
 
@@ -63,9 +66,21 @@ function Main_Search() {
 
             {/* 모달 */}
             <button  className="search-date" name="date" onClick={openModal}>
-            <CalenderModal isOpen={isModalOpen} onClose={closeModal}/>
               날짜
             </button>
+            {
+              isModalOpen ?
+              isModalOpen && (
+                <CalendarModal
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  selectedDate={selectedDate}
+                  onDateChange={handleDateChange}
+                  />
+              )
+              :
+              null
+            }
 
             <input
               className="search-Personnel"
@@ -83,4 +98,3 @@ function Main_Search() {
   );
 }
 
-export default Main_Search;

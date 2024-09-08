@@ -10,12 +10,12 @@ export default function Header() {
       <div className="bar-container">
         <ul className="bar-container-ul">
           <li className="bar-container-li">
-            <Link to={"./loginpage"} className="loginbtn">
+            <Link to={"./signin"} className="loginbtn">
               로그인
             </Link>
           </li>
           <li className="bar-container-li">
-            <Link to={"./membership"} className="membership">
+            <Link to={"./signup"} className="membership">
               회원가입
             </Link>
           </li>

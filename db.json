@@ -21,14 +21,46 @@
             "address": "부산광역시 해운대",
             "address_deep": "11-12번지 바다맑을로",
             "mount": 200000,
-            "reservation_date": ""
+            "reservation_date": "",
+            "main_image_url":"https://example.com/images/jeju.jpg",
+            "image_url": "https://example.com/images/busan.jpg"
         },
         {
             "name": "제주바다",
             "address": "제주특별시 제주한라봉",
             "address_deep": "13-1번지 유채꽃보로",
             "mount": 250000,
-            "reservation_date": ""
+            "reservation_date": "",
+            "main_image_url":"https://example.com/images/jeju.jpg",
+            "image_url": "https://example.com/images/jeju.jpg"
+        },
+        {
+            "name": "인천",
+            "address": "소야도",
+            "address_deep": "인천광역시 옹진군 덕적면 소야리",
+            "mount": 250000,
+            "reservation_date": "",
+            "main_image_url":"hthttps://lh5.googleusercontent.com/p/AF1QipOJaNh2BkXQ93I_UNPC2819xw26CExOCCp_xwMr=w540-h312-n-k-no",
+            "image_url": "https://lh5.googleusercontent.com/p/AF1QipNfoVMilMSDsFlBds3TIVaEEJeobqiqMoNfSF_L=w540-h312-n-k-no"
+        },
+        {
+            "name": "통영",
+            "address": "한산도",
+            "address_deep": "인천광역시 옹진군 덕적면 소야리",
+            "mount": 250000,
+            "reservation_date": "",
+            "main_image_url":"https://lh5.googleusercontent.com/p/AF1QipOw3JdY4QOtB0ElP8AUQ9_EexKLdtSpFGC2tF27=w540-h312-n-k-no",
+            "image_url": "https://lh5.googleusercontent.com/p/AF1QipN_esFfCU9SY3g2yS2FBIi2E1SpZckw1bhK4TnY=w540-h312-n-k-no"
+        },
+        {
+            "name": "제주도",
+            "address": "비양도",
+            "address_deep": "제주특별자치도 제주시 한림읍 협재리",
+            "mount": 250000,
+            "reservation_date": "",
+            "main_image_url":"https://lh5.googleusercontent.com/p/AF1QipNw731BRIBpqTZ8wUIAu_YpCfXhdBjVvrme1ZAa=w540-h312-n-k-no",
+            "image_url": "https://lh5.googleusercontent.com/p/AF1QipME0IZDgWeSnl0PhBO6XimIOPCbCFX1N1qpbqaQ=w540-h312-n-k-no"
         }
+        
     ]
 }
