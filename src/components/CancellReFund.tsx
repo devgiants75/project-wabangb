@@ -11,11 +11,10 @@ export default function CancellReFund() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    //! 데이터를 특정해서 가져오는 것부터 시도
     useEffect(() => {
         const fetchRefundAmount = async () => {
             try {
-                const response = await axios.get<RefundData>('http://localhost:4000/lodgings/amount/{1}');
+                const response = await axios.get<RefundData>('http://localhost:4000/refund');
                 setRefundAmount(response.data.amount);
                 setLoading(false);
             } catch(error: any) {

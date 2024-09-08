@@ -34,5 +34,8 @@
             "amount": "250000",
             "reservationDate": ""
         }
-    ]
+    ],
+    "refund": {
+        "amount": 100000
+    }
 }
