@@ -48,8 +48,8 @@ export default function App() {
         <Route path="/reservationpage" element={<ReservationPage />} />
         <Route path="/reviewedit" element={<ReviewEdit />} />
         <Route path="/reviewpage" element={<ReviewPage />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/hompage/signin" element={<SignIn />} />
+        <Route path="/hompage/signup" element={<SignUp />} />
         <Route path="/usagedetails" element={<UsageDetails />} />
       </Routes>
     </>

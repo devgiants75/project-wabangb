@@ -66,7 +66,7 @@ export default function SignUp() {
   const navigate = useNavigate();
 
   //# 유효성 검사 함수들
-  const validateId = (id: string) => id.length >= 3 && /^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}%/.test(id);
+  const validateId = (id: string) => id.length >= 3 && /^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}/.test(id);
   const validatePassword = (password: string) => password.length >= 8 && /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/.test(password);
   const validatePasswordConfirm = (password: string, passwordConfirm: string) => password === passwordConfirm;
   const validateName = (name: string) => name.length > 0;
@@ -201,7 +201,7 @@ export default function SignUp() {
           </div>
           <div className='textForm'>
             <input
-              type="passwordConfirm"
+              type="password"
               name='passwordConfirm'
               value={signupFormState.passwordConfirm}
               onChange={handleInputChange}
