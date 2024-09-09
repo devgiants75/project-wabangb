@@ -1,7 +1,9 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import '../styles/CalenderModal.css'
+import  * as s  from '../styles/emotion/CalenderModal';
+
 
 interface CalendarModalProps {
   isOpen: boolean;
@@ -14,9 +16,9 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ isOpen, onClose, selected
   if (!isOpen) return null;
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>&times;</span>
+    <div css={s.layout}>
+      <div css={s.layout}>
+        <span css={s.close} onClick={onClose}>&times;</span>
         <DatePicker
           selected={selectedDate}
           onChange={onDateChange}
