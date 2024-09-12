@@ -1,7 +1,9 @@
+/** @jsxImportSource @emotion/react */
+import  * as s  from '../styles/emotion/MainSearch';
 import React, { useState } from "react";
 import "../styles/MainSearch.css";
-import dayjs, { Dayjs } from 'dayjs';
 import CalendarModal from "./CalenderModal";
+
 
 interface Item {
   [key: string]: any;
@@ -51,12 +53,11 @@ export default function MainSearch() {
   };
 
   return (
-    <div className="container">
-      <div className="search-continer">
-        <div className="search">
-          <div className="search-element">
+    <div css={s.layout}>
+      <div css={s.searchContiner}>
+        <div css={s.search}>
+          <div css={s.searchElement} >
             <input
-              className="search-area"
               placeholder="지역명"
               type="text"
               name="area"
@@ -65,7 +66,7 @@ export default function MainSearch() {
             />
 
             {/* 모달 */}
-            <button  className="search-date" name="date" onClick={openModal}>
+            <button name="date" onClick={openModal}>
               날짜
             </button>
             {
@@ -83,14 +84,12 @@ export default function MainSearch() {
             }
 
             <input
-              className="search-Personnel"
               placeholder="인원수"
               type="text"
               name="person"
               onChange={(e) => searchItems(e.target.value)}
-              // onKeyDown={searchRef.person.current}
             />
-            <button className="search-button" style={{textDecoration:"none"}}>검색</button>
+            <button style={{textDecoration:"none"}}>검색</button>
           </div>
         </div>
       </div>
